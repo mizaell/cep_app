@@ -4,7 +4,6 @@ import '../repositories/cep_repository.dart';
 import '../repositories/cep_repository_impl.dart';
 
 class HomePage extends StatefulWidget {
-  //const HomePage({ super.key });
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -33,10 +32,10 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontSize: 25),
         ),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(238, 108, 27, 223),
+        backgroundColor: const Color.fromARGB(238, 108, 27, 223),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: 20,
           left: 12,
           right: 12,
@@ -49,17 +48,17 @@ class _HomePageState extends State<HomePage> {
                 TextFormField(
                   controller: cepEC,
                   decoration: InputDecoration(
-                    fillColor: Color.fromARGB(235, 197, 164, 243),
+                    fillColor: const Color.fromARGB(235, 197, 164, 243),
                     filled: true,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         width: 0,
                         style: BorderStyle.none,
                       ),
                     ),
                     labelText: "CEP",
-                    labelStyle: TextStyle(
+                    labelStyle: const TextStyle(
                       fontFamily: 'Arial',
                       color: Color.fromARGB(255, 105, 105, 105),
                       fontSize: 20,
@@ -72,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                     return null;
                   },
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 ElevatedButton(
@@ -102,17 +101,17 @@ class _HomePageState extends State<HomePage> {
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                        Color.fromARGB(238, 108, 27, 223),
+                        const Color.fromARGB(238, 108, 27, 223),
                       ),
                     ),
                     child:
                         const Text('Buscar', style: TextStyle(fontSize: 18))),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Visibility(
                     visible: loading, child: const CircularProgressIndicator()),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Visibility(
@@ -120,13 +119,13 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.7,
                     height: MediaQuery.of(context).size.width * 0.2,
-                    padding: EdgeInsets.only(left: 8, right: 8),
+                    padding: const EdgeInsets.only(left: 8, right: 8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Color.fromARGB(238, 108, 27, 223),
+                      color: const Color.fromARGB(238, 108, 27, 223),
                     ),
                     child: ListView(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         top: 10,
                         bottom: 10,
                       ),
@@ -135,7 +134,8 @@ class _HomePageState extends State<HomePage> {
                           visible: enderecoModel != null,
                           child: Text(
                             '${enderecoModel?.logradouro} ${enderecoModel?.bairro} ${enderecoModel?.cep} ${enderecoModel?.localidade} ${enderecoModel?.uf}',
-                            style: TextStyle(fontSize: 18, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 18, color: Colors.white),
                             textAlign: TextAlign.center,
                           ),
                         ),
